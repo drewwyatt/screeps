@@ -10,8 +10,6 @@ import {
 
 export const loop = () => {
   releaseDeadCreeps()
-  const spawn = Game.spawns['Spawn1']
-
   if (canSpawnCreep()) {
     const harvesters = getCreepsByRole(Role.Harvester)
     const upgraders = getCreepsByRole(Role.Upgrader)
