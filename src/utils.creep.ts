@@ -46,7 +46,7 @@ export const findSources = (creep: Creep) => {
 }
 
 export const getCreepsByRole = (role: Role): Creep[] =>
-  _.filter(Game.creeps, c => c.memory.role === role)
+  _.filter(Game.creeps, (c: Creep) => c.memory.role === role)
 
 declare global {
   interface CreepMemory {
