@@ -31,6 +31,14 @@ export enum Role {
   Harvester = 'harvester',
   Upgrader = 'upgrader',
 }
+const PATH_STYLE: Record<Role, string> = {
+  [Role.Builder]: '#fa0',
+  [Role.Harvester]: '#fff',
+  [Role.Upgrader]: '#00f',
+}
+
+export const pathStyle = (stroke: string) => ({ visualizePathStyle: { stroke } })
+export const pathStyleForRole = (role: Role | `${Role}`) => pathStyle(PATH_STYLE[role])
 
 export const findSources = (creep: Creep) => {
   const source = creep.room.find(FIND_SOURCES)[0]
@@ -45,7 +53,7 @@ export const findSources = (creep: Creep) => {
   return false
 }
 
-export const getCreepsByRole = (role: Role): Creep[] =>
+export const getCreepsByRole = (role: Role | `${Role}`): Creep[] =>
   _.filter(Game.creeps, (c: Creep) => c.memory.role === role)
 
 declare global {

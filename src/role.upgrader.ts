@@ -1,12 +1,11 @@
-import { findSources } from './utils.creep'
+import { findSources, pathStyleForRole } from './utils.creep'
 
-export const run = (creep: Creep) => {
-  const spawn = Game.spawns['Spawn1']
+export default function UpgraderRole(creep: Creep) {
   const target = creep.room.controller
 
   if (findSources(creep)) return
 
   if (target && creep.transfer(target, RESOURCE_ENERGY) === ERR_NOT_IN_RANGE) {
-    creep.moveTo(target)
+    creep.moveTo(target, pathStyleForRole('upgrader'))
   }
 }
