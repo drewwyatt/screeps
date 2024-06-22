@@ -1,15 +1,17 @@
 {
   "name": "screeps",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code for https://screeps.com/",
   "main": "dist/main.js",
   "scripts": {
     "build": "babel --extensions .ts src --out-dir dist",
     "upload": "grunt screeps"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "screeps"
+  ],
+  "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
+  "license": "unlicense",
   "devDependencies": {
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
